@@ -13,7 +13,7 @@ export class OrderService {
   }
 
   getOrder(customerId : number){
-    return this.http.get("https://localhost:7220/api/Order/getByCustomerId/"+customerId);
+    return this.http.get("https://localhost:7220/api/Order/getListByCustomerId/"+customerId);
   }
 
   getOrderItems(id : number ){
@@ -22,5 +22,9 @@ export class OrderService {
 
   getOrderById(id: number){
     return this.http.get("https://localhost:7220/api/Order/getById/"+id);
+  }
+
+  delete(order :any){
+   return  this.http.post("https://localhost:7220/api/Order/delete",order);
   }
 }

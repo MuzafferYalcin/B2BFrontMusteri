@@ -1,0 +1,26 @@
+<section id="new-arrivals" class="new-arrivals">
+  <div class="container">
+    <div class="section-header ">
+      <h2>Ürünler</h2>
+    </div><!--/.section-header-->
+    <div class="new-arrivals-content d-flex" style="justify-content: right;">
+      <input type="text" style="width: 400px;" class="form-control fs-4" placeholder="Aranacak kelimeyi yazın" b >
+    </div>
+    <div class="new-arrivals-content">
+      <div class="row">
+        <div class="col-md-3 col-sm-4" *ngFor="let product of products">
+          <div class="single-new-arrival">
+            <div class="single-new-arrival-bg">
+              <img src="./assets/images/deneme.jpg" alt="" >
+              <div class="single-new-arrival-bg-overlay"></div>
+            </div>
+            <h4><a routerLink="/product-detail/{{ product.id }}" [innerText]="product.name"></a></h4>
+            <p class="arrival-product-price text-danger"><del [innerText]="product.price | currency: 'TRY':'symbol-narrow':'1.2-2'"></del></p>
+            <p class="arrival-product-price" [innerText]="(product.discount > 0 ? (product.price * (100-product.discount))/100 : product.price ) | currency: 'TRY':'symbol-narrow':'1.2-2'"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!--/.container-->
+
+</section>

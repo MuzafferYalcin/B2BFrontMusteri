@@ -10,6 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent {
   products :any = [];
   customerId = 0;
+  filterText : string="";
+
+
   constructor(private productService : ProductService,private avtivetedRoute : ActivatedRoute) {
     this.customerId = parseInt(localStorage.getItem("customerId")!);
     this.getProducts()

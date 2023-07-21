@@ -13,6 +13,7 @@ import { OrderDetailComponent } from './Components/order/order-detail/order-deta
 import { BasketDetailComponent } from './Components/basket/basket-detail/basket-detail.component';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './Components/home/product-detail/product-detail.component';
+import { ProductPipe } from './Components/home/product.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProductDetailComponent } from './Components/home/product-detail/product
     BasketComponent,
     HomeComponent,
     NavbarComponent,
+    ProductPipe,
     OrderDetailComponent,
     BasketDetailComponent,
     ProductDetailComponent

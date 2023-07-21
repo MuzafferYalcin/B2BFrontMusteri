@@ -4,11 +4,11 @@
       <h2>Ürünler</h2>
     </div><!--/.section-header-->
     <div class="new-arrivals-content d-flex" style="justify-content: right;">
-      <input type="text" style="width: 400px;" class="form-control fs-4" placeholder="Aranacak kelimeyi yazın" b >
+      <input type="text" style="width: 400px;" class="form-control fs-4" placeholder="Aranacak kelimeyi yazın" [(ngModel)]="filterText" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="new-arrivals-content">
       <div class="row">
-        <div class="col-md-3 col-sm-4" *ngFor="let product of products">
+        <div class="col-md-3 col-sm-4" *ngFor="let product of products | productPipe: filterText">
           <div class="single-new-arrival">
             <div class="single-new-arrival-bg">
               <img src="./assets/images/deneme.jpg" alt="" >
